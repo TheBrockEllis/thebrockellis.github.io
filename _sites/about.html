@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>About Me</title>
+<meta name="viewport" content="width=device-width">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/timeline.css" />
+<link rel="stylesheet" href="/assets/css/custom.css" />
+
+</head>
+<body  data-current-page="about">    
+    <div class="container">
+        <div id="header">
+    <ul class="nav nav-pills pull-right">
+        <li data-page-id="home"><a href="/">Home</a></li>
+        <li data-page-id="about"><a href="/about.html">About</a></li>
+        <li data-page-id="portfolio"><a href="/portfolio.html">Porfolio</a></li>
+        <li data-page-id="contact"><a href="/contact.html">Contact</a></li>
+        <li data-page-id="blog"><a href="/blog/">Blog</a></li>
+    </ul>
+    <h1 class="title">
+        <a href="/">
+            <img src="/assets/img/thebrockellis.jpg" title="My mug shot" id='mugshot' />
+            <span class='the'>The</span>BrockEllis
+        </a>
+    </h1>
+</div>
+
+        <h1>Greetings and salutations!</h1>
+    <p>My name is Brock Ellis. I am a open web evangelist and web developer from Fremont, NE.</p>
+
+    <p>My full time job is at <em>Sycamore Leaf Solutions </em>where I am a full stack developer. 
+        I absolutely love my job. You know that saying "Do something that you love and never work a day 
+        in your life"? Yea, I live it. I've worked there for 3 years now and still don't feel like I've
+        worked at all. My responsibilities there are to manage the new feature design and implementation
+        processes, work with customers to figure out those new features, and sometimes 
+        (when I'm lucky...) get down to brass tacks and code.</p>
+
+    <p>I recently started my own web design firm, <em>Sharproot Media</em> with my best friend 
+        Nick Scheck (@schrecknk). We didn't go into business to make money, but more to give 
+        legitimacy to our desire to help small businesses harness the web to help them succeed.
+        Since we use Wordpress as our main tool for establishing a web presence for our customers, 
+        it isn't all that technically challenging. What is challenging, and more fulfilling, is 
+        interacting with humans and having a dialog about what their needs and desires and finding a 
+        solution.</p>
+
+    <p>I love to learn new things. After gaining a firm grasp on the LAMP stack and jQuery, I 
+        debated between learning node.js and Ruby on Rails. I am starting down the RoR path but am 
+        undecided whether that will be my next technological adventure or not. This site is built 
+        with Jekyll and has served as my first voyage into the wonderful world of Ruby.</p>
+
+    <p>When not dabbling in new technologies or reading Hacker News, I am probably playing with my
+        family. I have an amazing wife, 2 doofus dogs and one wonderful daughter. I live a century 
+        old home which is in a constant state of improvement. </p>
+
+        <div class="row" id="footer">
+    <div class="col-md-4">
+        <span class="the">The</span> Brock Ellis
+    </div>
+    <div class="col-md-4">
+        Jack of all trades, master of none
+    </div>
+    <div class="col-md-4">
+        brock[at]sharproot[dot]com
+    </div>
+</div>
+
+<SCRIPT type="text/javascript" src="//code.jquery.com/jquery.js"></SCRIPT>
+<SCRIPT type="text/javascript">
+$(document).ready(function(){
+    // highlight current page
+    var currentPage = $("body").data("current-page");
+    if (currentPage) {
+        $("li[data-page-id='" + currentPage + "']").addClass("active");
+    }
+});
+</SCRIPT>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35551321-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+    </div>
+</body>
+</html>

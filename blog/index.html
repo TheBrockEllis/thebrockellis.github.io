@@ -1,0 +1,34 @@
+---
+layout: default
+title: Blog of The Brock Ellis
+id: blog
+---
+
+{% for post in paginator.posts %}
+<div class="row blogpost">
+    <div class="col-md-3">
+        <a href="{{ post.url }}">
+            <img class="home-blog-image img-responsive" src="/blog/img/{{ post.image }}" title="{{ post.title }}" />
+        </a>
+    </div>
+    <div class="col-md-9">
+        <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+        <p class="excerpt">{{ post.excerpt }}</p>
+        <span>Posted on: {{ post.date | date_to_string }}</span>
+    </div>
+</div> <!-- end row -->
+{% endfor %}
+
+<nav id="pagination">
+    {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+            <a href="/blog/" title="Previous Page">&laquo; Previous</a>
+        {% else %}
+            <a href="/blog/{{ paginator.previous_page }}/" title="Previous Page">&laquo; Previous</a>
+        {% endif %}
+    {% endif %}
+
+    {% if paginator.next_page %}
+        <a href="/blog/{{ paginator.next_page }}/" title="Next Page">Next &raquo;</a>
+    {% endif %}
+</nav>

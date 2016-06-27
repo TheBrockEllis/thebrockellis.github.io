@@ -1,0 +1,151 @@
+/*****************************************************************************/
+/*
+/* TheBrockEllis Specifics
+/*
+/*****************************************************************************/
+@media (max-width: 480px) {
+    .nav-pills {
+        width: 100%;
+    }
+
+    .nav-pills > li {
+        float: none;
+    }
+}
+
+a {
+    color: #333333;
+    border-bottom: 2px dotted #0000FF;
+}
+
+p {
+    line-height: 1.5em;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+}
+
+.post p {
+    margin-bottom: 25px;
+}
+
+#mugshot {
+    width: 50px;
+}
+
+#header{
+    line-height: 2.5em;
+}
+
+#footer {
+    color: #b0b0b0;
+    margin:25px 0px;
+    border-top: 1px solid #d0d0d0;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.title a {
+  text-decoration: none;
+  color: green;
+  border-bottom: none;
+}
+
+.the {
+  color: #000;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    border-bottom: none;
+    background-color: green;
+}
+
+.nav-pills>li>a, .nav-pills>li>a:hover, .nav-pills>li>a:focus {
+    border-bottom: none;
+    color: green;
+}
+
+.home-icons {
+    float: left;
+    margin: 15px 10px 10px 0px;
+}
+
+.home-blog {
+    padding-top: 0px;
+    margin-bottom: 25px;
+}
+
+.home-blog > .col-md-9 {
+    padding-bottom: 25px;
+}
+
+.home-blog > .col-md-9 h3 {
+    margin-top: 0px;
+}
+
+.home-blog-image {
+    text-align: center;
+    margin: 0 auto;
+    border: 1px solid #B0B0B0;
+}
+
+.contact-icons {
+    text-align: center;
+    font-size: 6em;
+}
+
+.contact-icons:hover {
+    text-shadow: 1px 1px solid #c0c0c0;
+}
+
+#contact-facebook:hover {
+    color: #3b5998;
+}
+
+#contact-twitter:hover {
+    color: #00aced;
+}
+
+#contact-github:hover {
+    color: #bbb;
+}
+
+#contact-linkedin:hover {
+    color: #007bb6;
+}
+
+.blog-meta {
+    text-align: right;
+}
+
+.blog-meta-image {
+    margin-bottom: 10px;
+}
+
+.blog-meta-categories {
+    margin-top: 10px;
+}
+
+.blog-meta-category {
+    display: block;
+}
+
+.blog-content {
+    border-left: 1px solid #d0d0d0;
+}
+
+.blogpost {
+    margin-bottom: 20px;
+}
+
+.blogpost h3 {
+    margin-top: 0px;
+}
+
+.contactlink {
+    border-bottom: none;
+}
+
+#pagination {
+    text-align: center;
+    font-size: 1.3em;
+}

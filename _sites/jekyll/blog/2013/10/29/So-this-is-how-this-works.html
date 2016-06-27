@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>So this is how this works</title>
+<meta name="viewport" content="width=device-width">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/timeline.css" />
+<link rel="stylesheet" href="/assets/css/custom.css" />
+
+</head>
+<body  data-current-page="/jekyll/blog/2013/10/29/So-this-is-how-this-works">    
+    <div class="container">
+        <div id="header">
+    <ul class="nav nav-pills pull-right">
+        <li data-page-id="home"><a href="/">Home</a></li>
+        <li data-page-id="about"><a href="/about.html">About</a></li>
+        <li data-page-id="portfolio"><a href="/portfolio.html">Porfolio</a></li>
+        <li data-page-id="contact"><a href="/contact.html">Contact</a></li>
+        <li data-page-id="blog"><a href="/blog/">Blog</a></li>
+    </ul>
+    <h1 class="title">
+        <a href="/">
+            <img src="/assets/img/thebrockellis.jpg" title="My mug shot" id='mugshot' />
+            <span class='the'>The</span>BrockEllis
+        </a>
+    </h1>
+</div>
+
+        <div class="row">
+    <div class="col-md-2 col-md-offset-1 blog-meta">
+        <img src="/blog/img/2013-10-29.png" title="So this is how this works" class='blog-meta-image img-responsive img-thumbnail' />
+        <div class="blog-meta-posted"> 29 Oct 2013 <i class="icon-calendar"></i> </div>
+        <div class="blog-meta-author"> Brock Ellis <i class="icon-user"></i> </div>
+        <div class="blog-meta-categories">
+            
+                <span class='blog-meta-category'> jekyll <i class="icon-tag"></i> </span>
+            
+                <span class='blog-meta-category'> blog <i class="icon-tag"></i> </span>
+            
+        </div>
+    </div>
+    <div class="col-md-9 blog-content">
+        <h2>So this is how this works</h2>
+        <div class="post">
+            <p>I am terrible at sticking with things. Dieting, drinking more water and blogging. Terrible. All of it.</p>
+
+<p>If you couldn’t tell, I did some rearranging of the blog a few weeks ago. The old blog was a pretty straight forward
+CRUD/PHP job that wasn’t anything spectacular. I used it to learn a lot of things (ajax forms, file uploading, integration with Disqus)
+but in the end the code was sloppy and unstructured. Party due to my learning-as-i-go style and partly because there was so much
+time inbetween updates.</p>
+
+<p>I made the switch to Jekyll because it intrigued me. I had no idea what a ‘static site generator’ was and why it was good.
+I have been a pretty big proponent of Wordpress and something heralded as the ‘wordpress killer for devs’ piqued my interest.</p>
+
+<p>Jekyll has not disappointed. So far, I love it. The flexible front matter tags are awesome to work with. I created a custom tag
+for all the static pages and added one on posts for image use. The ability to host it right off of Github is awesome (and gives me some sweet dev cred).</p>
+
+<p>I’m still a super novice with ruby which I aim to address in the future. I am fairly certain of my PHP abilities at this point,
+and when I need to get something done fast, it will really be hard not to fall back on that crutch. It’s like my daughter, Ansleigh.
+She’s starting to learn to walk, but when she really wants to get somewhere she always ends up on her butt scooting around. It’s going
+to be really hard for her to learn to walk because she’s so efficient at scooting. Same with me and learning a new language. Learning Ruby on Rails
+is going to be amazing in the long run, but the temptation to revert back to what is comfortable will be there for a while.</p>
+
+<p>All in all, I can’t wait to get better at life. Parenting, coding, blogging. All of it. I can’t wait.</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php">function oohahh($gasp) {
+  return "This is how this works..." . $gasp;
+}</code></pre></figure>
+
+
+        </div>
+        
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname    = "thebrockellis";
+                var disqus_title        = "So this is how this works";
+                var disqus_url          = "http://thebrockellis.com/jekyll/blog/2013/10/29/So-this-is-how-this-works.html";
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+        
+    </div>
+</div>
+
+
+        <div class="row" id="footer">
+    <div class="col-md-4">
+        <span class="the">The</span> Brock Ellis
+    </div>
+    <div class="col-md-4">
+        Jack of all trades, master of none
+    </div>
+    <div class="col-md-4">
+        brock[at]sharproot[dot]com
+    </div>
+</div>
+
+<SCRIPT type="text/javascript" src="//code.jquery.com/jquery.js"></SCRIPT>
+<SCRIPT type="text/javascript">
+$(document).ready(function(){
+    // highlight current page
+    var currentPage = $("body").data("current-page");
+    if (currentPage) {
+        $("li[data-page-id='" + currentPage + "']").addClass("active");
+    }
+});
+</SCRIPT>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35551321-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+    </div>
+</body>
+</html>

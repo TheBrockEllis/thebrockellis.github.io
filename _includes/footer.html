@@ -1,0 +1,35 @@
+<div class="row" id="footer">
+    <div class="col-md-4">
+        <span class="the">The</span> Brock Ellis
+    </div>
+    <div class="col-md-4">
+        Jack of all trades, master of none
+    </div>
+    <div class="col-md-4">
+        brock[at]sharproot[dot]com
+    </div>
+</div>
+
+<SCRIPT type="text/javascript" src="//code.jquery.com/jquery.js"></SCRIPT>
+<SCRIPT type="text/javascript">
+$(document).ready(function(){
+    // highlight current page
+    var currentPage = $("body").data("current-page");
+    if (currentPage) {
+        $("li[data-page-id='" + currentPage + "']").addClass("active");
+    }
+});
+</SCRIPT>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35551321-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
