@@ -23,6 +23,5 @@ paginate: 5
 timezone: America/Chicago
 layout_dir: ./_layouts
 destination: ./_sites
-
+permalink: /:year/:month/:day/:title
 gems: [jekyll-paginate]
-
