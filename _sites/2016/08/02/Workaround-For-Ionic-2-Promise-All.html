@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Ionic 2 Multiple Tab Dynamic Selection</title>
+<meta name="viewport" content="width=device-width">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/timeline.css" />
+<link rel="stylesheet" href="/assets/css/custom.css" />
+
+</head>
+<body  data-current-page="/2016/08/02/Workaround-For-Ionic-2-Promise-All">    
+    <div class="container">
+        <div id="header">
+    <ul class="nav nav-pills pull-right">
+        <li data-page-id="home"><a href="/">Home</a></li>
+        <li data-page-id="about"><a href="/about.html">About</a></li>
+        <li data-page-id="portfolio"><a href="/portfolio.html">Porfolio</a></li>
+        <li data-page-id="contact"><a href="/contact.html">Contact</a></li>
+        <li data-page-id="blog"><a href="/blog/">Blog</a></li>
+    </ul>
+    <h1 class="title">
+        <a href="/">
+            <img src="/assets/img/thebrockellis.jpg" title="My mug shot" id='mugshot' />
+            <span class='the'>The</span>BrockEllis
+        </a>
+    </h1>
+</div>
+
+        <div class="row">
+    <div class="col-md-2 col-md-offset-1 blog-meta">
+        <img src="/blog/img/2016-08-02.jpg" title="Ionic 2 Multiple Tab Dynamic Selection" class='blog-meta-image img-responsive img-thumbnail' />
+        <div class="blog-meta-posted"> 02 Aug 2016 <i class="icon-calendar"></i> </div>
+        <div class="blog-meta-author"> Brock Ellis <i class="icon-user"></i> </div>
+        <div class="blog-meta-categories">
+            
+                <span class='blog-meta-category'> work <i class="icon-tag"></i> </span>
+            
+                <span class='blog-meta-category'> ionic2 <i class="icon-tag"></i> </span>
+            
+                <span class='blog-meta-category'> tabs <i class="icon-tag"></i> </span>
+            
+        </div>
+    </div>
+    <div class="col-md-9 blog-content">
+        <h2>Ionic 2 Multiple Tab Dynamic Selection</h2>
+        <div class="post">
+            <p>tl;dr Multiple HTTP requests that may or may not fail with Promise.all</p>
+
+<h2 id="situation">Situation</h2>
+<p>I am building a type of messaging interface in an Ionic 2 application. The user has a <code class="highlighter-rouge">textarea</code> for sending a message and then they get to select their recipients to send the message to.</p>
+
+<h2 id="problem">Problem</h2>
+<p>The way the app is structured, messages can be sent to 3 different user types: student, parents or staff. When selecting recipients for the message, I wanted to include all 3 user types in one unified list. The required making 1, 2 or even 3 rest API calls to get the list of users (each user type had their own endpoint).</p>
+
+<p>I created my HTTP requests like so:</p>
+
+<pre><code class="language-ts">  //employee search
+  let url = `https://www.service.com/api/v1/User/${me.UserID}/Thing/Search?filter=${val}&amp;type=3`;
+  this.promises.push( this.http.get(url).map(res =&gt; res.json()).toPromise() );
+
+  //family search
+  url = `https://www.service.com/api/v1/User/${me.UserID}/Thing/Search?filter=${val}&amp;type=2`;
+  this.promises.push( this.http.get(url).map(res =&gt; res.json()).toPromise() );
+</code></pre>
+
+<p>Then I set up a Promise.all to wait for all promises to resolve before compiling a list of users to display in the template, like so:</p>
+
+<pre><code class="language-ts">  Promise.all(this.promises).then( values =&gt; {
+    var users = [];
+    users = Array.prototype.concat.apply([], values);
+  });
+</code></pre>
+
+<p>My issue was that I was requiring the user to give me a string to use as a filter for the search (the <code class="highlighter-rouge">?filter=${val}</code> in the HTTP request). This string is used by the API to narrow search results based on last name matching.</p>
+
+<p>If a user typed in “ell” it would return an employee named “Brock Ellis” but there was no families that had the last name that contained “ell”. The second HTTP request would then return a 204 No Content and the promise would be rejected, causing the Promise.all() to fail and no data would be displayed at all.</p>
+
+<h2 id="solution">Solution</h2>
+<p>The solution was to manually listen to the <code class="highlighter-rouge">.then()</code> and <code class="highlighter-rouge">.catch()</code> of each HTTP request. On a successful request, we’ll have data returned and we can just <code class="highlighter-rouge">Promise.resolve(results)</code> and be happy. If no users were matched, we’ll still return a resolved promise, but we’ll just return an empty array. This way, the Promise.all() still works as intended and I attempt to merge two or more arrays (if they happen to be empty, so be it).</p>
+
+<p>The above HTTP requests end up looking like this:</p>
+
+<pre><code class="language-ts">  //employee search
+  let url = `https://www.service.com/api/v1/User/${me.UserID}/Thing/Search?filter=${val}&amp;type=3`;
+  let employeeSearchPromise = this.http.get(url).map(res =&gt; res.json()).toPromise()
+    .then( result =&gt; Promise.resolve(result))
+    .catch( error =&gt; Promise.resolve( [] ));
+  this.promises.push( employeeSearchPromise );
+
+  //family search
+  url = `https://www.service.com/api/v1/User/${me.UserID}/Thing/Search?filter=${val}&amp;type=2`;
+  let familySearchPromise = this.http.get(url).map(res =&gt; res.json()).toPromise()
+    .then( result =&gt; Promise.resolve(result))
+    .catch( error =&gt; Promise.resolve( [] ));
+  this.promises.push( familySearchPromise );
+
+</code></pre>
+
+<p>Credits for this fix go to <a href="http://programmers.stackexchange.com/questions/315329/error-handlers-inside-promise-all">lxrec from programmers.stackexchange.com</a> with an amazing write up that gives more detail.</p>
+
+        </div>
+        
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname    = "thebrockellis";
+                var disqus_title        = "Ionic 2 Multiple Tab Dynamic Selection";
+                var disqus_url          = "http://thebrockellis.com/2016/08/02/Workaround-For-Ionic-2-Promise-All";
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+        
+    </div>
+</div>
+
+
+        <div class="row" id="footer">
+    <div class="col-md-4">
+        <span class="the">The</span> Brock Ellis
+    </div>
+    <div class="col-md-4">
+        Jack of all trades, master of none
+    </div>
+    <div class="col-md-4">
+        brock[at]sharproot[dot]com
+    </div>
+</div>
+
+<SCRIPT type="text/javascript" src="//code.jquery.com/jquery.js"></SCRIPT>
+<SCRIPT type="text/javascript">
+$(document).ready(function(){
+    // highlight current page
+    var currentPage = $("body").data("current-page");
+    if (currentPage) {
+        $("li[data-page-id='" + currentPage + "']").addClass("active");
+    }
+});
+</SCRIPT>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35551321-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+    </div>
+</body>
+</html>
