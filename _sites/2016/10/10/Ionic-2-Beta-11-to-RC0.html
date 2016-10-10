@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Updating Ionic beta.11 to RC0</title>
+<meta name="viewport" content="width=device-width">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/assets/css/syntax.css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/timeline.css" />
+<link rel="stylesheet" href="/assets/css/custom.css" />
+
+</head>
+<body  data-current-page="/2016/10/10/Ionic-2-Beta-11-to-RC0">    
+    <div class="container">
+        <div id="header">
+    <ul class="nav nav-pills pull-right">
+        <li data-page-id="home"><a href="/">Home</a></li>
+        <li data-page-id="about"><a href="/about.html">About</a></li>
+        <li data-page-id="portfolio"><a href="/portfolio.html">Porfolio</a></li>
+        <li data-page-id="contact"><a href="/contact.html">Contact</a></li>
+        <li data-page-id="blog"><a href="/blog/">Blog</a></li>
+    </ul>
+    <h1 class="title">
+        <a href="/">
+            <img src="/assets/img/thebrockellis.jpg" title="My mug shot" id='mugshot' />
+            <span class='the'>The</span>BrockEllis
+        </a>
+    </h1>
+</div>
+
+        <div class="row">
+    <div class="col-md-2 col-md-offset-1 blog-meta">
+        <img src="/blog/img/2016-10-10.jpg" title="Updating Ionic beta.11 to RC0" class='blog-meta-image img-responsive img-thumbnail' />
+        <div class="blog-meta-posted"> 10 Oct 2016 <i class="icon-calendar"></i> </div>
+        <div class="blog-meta-author"> Brock Ellis <i class="icon-user"></i> </div>
+        <div class="blog-meta-categories">
+            
+                <span class='blog-meta-category'> code <i class="icon-tag"></i> </span>
+            
+                <span class='blog-meta-category'> Ionic <i class="icon-tag"></i> </span>
+            
+                <span class='blog-meta-category'> Angular <i class="icon-tag"></i> </span>
+            
+        </div>
+    </div>
+    <div class="col-md-9 blog-content">
+        <h2>Updating Ionic beta.11 to RC0</h2>
+        <div class="post">
+            <p>tl;dr My notes from upgrading a large-ish Ionic 2 app from beta.11 to RC.0</p>
+
+<p>Huzzah! Ionic 2 Release Candidate 0 is out in the wild!!!</p>
+
+<p><img src="/blog/img/2016-10-10-1.png" class="img-responsive img-thumbnail" style="width:50%;display:block;margin:0 auto;" /></p>
+
+<p>This is super exciting news. I’ve been using Ionic for a few months now full time and it’s an amazing framework. I love just about everything about it. However, it is still officially in beta so the constant breaking changes is difficult to deal with.</p>
+
+<p>The biggest hurdle I’ve had with Ionic (and my extension, Angular, since Angular powers the framework) is how to do forms correctly. One of the apps I’ve been building uses forms fairly extensively and it’s been a lot of trial and error to get things working.</p>
+
+<p>I’m working through updating this app to RC0 and found some issues with the new forms modules from Angular. I want to use this blog post as a living list of notes that I can refer to later (and maybe help someone else out in the future).</p>
+
+<hr />
+
+<h2 id="appmodulets">app.module.ts</h2>
+
+<p>The App Module is a new concept for Ionic and I’m still trying to grok it. I do know that to get forms to work properly, you’ll need to import the FormsModule into the <code class="highlighter-rouge">imports</code> section of the App Module.</p>
+
+<pre><code class="language-typescript">import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
+import { IonicApp, IonicModule, Nav } from 'ionic-angular';
+import { MyApp } from './app.component';
+
+@NgModule({
+  declarations: [
+    MyApp
+  ],
+  imports: [
+    IonicModule.forRoot(MyApp),
+    FormsModule
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp
+  ],
+  providers: [Nav, TokenService, MeService, HttpService, SchoolService, IssueService, ClassService, ErrorService]
+})
+</code></pre>
+
+<h2 id="updatevalue">updateValue()</h2>
+
+<p>I used to update a value within a FormGroup with the following code:</p>
+
+<pre><code class="language-typescript">(&lt;FormControl&gt;this.assignmentForm.controls['subject']).updateValue(assignment.SubjectID);
+</code></pre>
+
+<p>I would need to cast the control to a FormControl instead of an AbstractControl to get access to the <code class="highlighter-rouge">updateValue()</code> method. However, in Angular 2 Final updateValue() has been deprecated and split into two separate methods: <code class="highlighter-rouge">patchValue()</code> and <code class="highlighter-rouge">setValue()</code>. You can read more about the difference and reasonings <a href="https://github.com/angular/angular/pull/10537">here</a>. The code I’m using now is:</p>
+
+<pre><code class="language-typescript">this.assignmentForm.get('subject').patchValue(assignment.SubjectID);
+</code></pre>
+
+<h2 id="moment-import">Moment import</h2>
+
+<p>My previous import statements for using Moment.JS looked like this:</p>
+
+<pre><code class="language-typescript">import * as Moment from 'moment';
+</code></pre>
+
+<p>The compiler kept throwing odd errors about not being the <code class="highlighter-rouge">unix</code> not being defined. I looked around and found a quick answer posted just a few hours earlier on the <a href="https://forum.ionicframework.com/t/error-from-rollup-when-importing-moment-js-with-rc0/64902">Ionic Framework Forums</a>. Changing the import to the following structure seemed to help:</p>
+
+<pre><code class="language-typescript">import moment from 'moment';
+</code></pre>
+
+<h2 id="no-directive-declared-for-pipe">No directive declared for [pipe]</h2>
+
+<p>I use 4 or 5 custom pipes for manipulating data in my app. However, after following the directions for upgrading a beta.11 app to RC.0, I was getting an error about no directive declared for one of my pipes. I know it had nothing to do with a specific pipe, because when I removed the first pipe I declared in the <code class="highlighter-rouge">app.module.ts</code> file, the error would just complain about the next one.</p>
+
+<p>After re-reading the directions, it looks like I had pasted my Pipes into both the <code class="highlighter-rouge">declarations</code> AND <code class="highlighter-rouge">entryComponents</code>. Turns out, pipes are not really components, so they needed to be removed from the <code class="highlighter-rouge">entryComponents</code> array. Once removed, never saw the error again.</p>
+
+<p>Remove pipes from the entryComponents of the NgModule. Keep them in the declarations.</p>
+
+<h2 id="no-provider-for-navcontroller">No Provider for NavController</h2>
+
+<p>This was working prior. I have a provider called <code class="highlighter-rouge">ErrorProvider</code> that acts as a universal error reporter. After every HTTP request, I catch errors and send them to that provider. The provider then extracts error data and shows an <code class="highlighter-rouge">Alert</code> component. I know, its bad practice to mix a provider with UI but it works, so sue me. Also, I have yet to find a good tutorial about how to share UI elements like this. As soon as I find something, I’ll sure as hell post a blog about it.</p>
+
+<p>The issue was that the <code class="highlighter-rouge">ErrorProvider</code> was accessing NavController directly (<code class="highlighter-rouge">constructor(public nav:NavController)</code> and then <code class="highlighter-rouge">this.nav.pop()</code>), when it can’t anymore.</p>
+
+<p>In order to access the active nav from inside of a provider, you have to access it via the App helper.</p>
+
+<pre><code class="language-typescript">  constructor(public app:App){
+    this.nav = this.app.getActiveNav();
+  }
+</code></pre>
+
+<h2 id="cannot-read-property-parentinjector-of-undefined">“Cannot read property ‘parentInjector’ of undefined”</h2>
+
+<p>This one was a doozy. I had two TabPages (<code class="highlighter-rouge">Tabs1Page</code> and <code class="highlighter-rouge">Tabs2Page</code>) that I wanted to switch back and forth between. Each TabPage is a root element that should have it’s own navigation stack.</p>
+
+<p>I was attempting to find the root nav element of <code class="highlighter-rouge">Tabs1Page</code> and set it to the new <code class="highlighter-rouge">Tabs2Page</code> using:</p>
+
+<pre><code class="language-typescript">  this.app.getRootNav().setRoot(TabsPage);
+</code></pre>
+<p>This is now the recommended way of resetting root nav (instead of <code class="highlighter-rouge">this.nav.setRoot()</code>). Nothing new there. Except it was no longer working in RC.0. It ws giving me this error, which, by the way, has 0 documentation anywhere on the web. I guess I may be the first person ever to see it.</p>
+
+<p><img src="/blog/img/2016-10-10-2.png" class="img-responsive img-thumbnail" style="width:100%;" /></p>
+
+<p>The solution was super simple. I had forgotten to remove the <code class="highlighter-rouge">providers</code> on my <code class="highlighter-rouge">app.component.ts</code>. All of those dependencies should have been moved to the <code class="highlighter-rouge">app.module.ts</code>, which I did. I just neglected to clean up the root component. Commenting out that one line made things work like a charm now.</p>
+
+<pre><code class="language-typescript">
+@Component({
+  templateUrl: 'app.template.html',
+  //providers: [Nav, TokenService, MeService, HttpService, SchoolService, StudentService, IssueService, ClassService]
+})
+export class MyApp {
+  ...
+
+</code></pre>
+
+        </div>
+        
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname    = "thebrockellis";
+                var disqus_title        = "Updating Ionic beta.11 to RC0";
+                var disqus_url          = "http://thebrockellis.com/2016/10/10/Ionic-2-Beta-11-to-RC0";
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+        
+    </div>
+</div>
+
+
+        <div class="row" id="footer">
+    <div class="col-md-4">
+        <span class="the">The</span> Brock Ellis
+    </div>
+    <div class="col-md-4">
+        Jack of all trades, master of none
+    </div>
+    <div class="col-md-4">
+        brock[at]sharproot[dot]com
+    </div>
+</div>
+
+<SCRIPT type="text/javascript" src="//code.jquery.com/jquery.js"></SCRIPT>
+<SCRIPT type="text/javascript">
+$(document).ready(function(){
+    // highlight current page
+    var currentPage = $("body").data("current-page");
+    if (currentPage) {
+        $("li[data-page-id='" + currentPage + "']").addClass("active");
+    }
+});
+</SCRIPT>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-35551321-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+    </div>
+</body>
+</html>
