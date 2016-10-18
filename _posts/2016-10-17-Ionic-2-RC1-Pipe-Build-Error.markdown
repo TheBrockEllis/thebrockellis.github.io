@@ -10,6 +10,12 @@ image: "2016-10-17.jpg"
 
 tl;dr Fun error with ngc when building RC1 app solved!
 
+# UPDATE
+
+A few wonderful people on Twitter have pointed out that the `args[]` param in my pipe was a required parameter. Simply adding a question mark after the param name (`args?: any[]`) would resolve the issue as well. I guess I just chose the nuclear option. =)
+
+---
+
 Just upgraded my RC0 app to RC1 and was adding some new code. Wanted to throw an update to a buddy of mine via TestFlight for iOS. I went to go run `ionic build ios` and ran into the following error:
 
 ```
