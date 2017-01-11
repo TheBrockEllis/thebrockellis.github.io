@@ -64,9 +64,18 @@ p {
     color: green;
 }
 
+.home-icon-row {
+  margin-top: 50px;
+  line-height: 30px;
+  vertical-align: middle;
+}
+
+.home-icon-row h2 {
+  display: inline;
+}
+
 .home-icons {
-    float: left;
-    margin: 15px 10px 10px 0px;
+  margin-right: 15px;
 }
 
 .home-blog {
