@@ -24,7 +24,7 @@ That led me to google 'angular 2 in Chrome extensions'. This got me no where. Lo
 
 Building a PWA from an Ionic app is super simple. First, you need to run `ionic platform add browser` inside of your project directly. This adds the "browser" platform to your app, right alongside Android and iOS.
 
-Then you run `ionic build browser --production`. This mimics the same build process that you'd use for other native platforms. The difference is, instead of placing the transpiled and platform optimized code in the `platforms/android` or `platforms/ios` directories, it places your app in the `www` directory.
+Then you run `ionic build browser --prod`. This mimics the same build process that you'd use for other native platforms. The difference is, instead of placing the transpiled and platform optimized code in the `platforms/android` or `platforms/ios` directories, it places your app in the `www` directory.
 
 This is what my `www` directory looked like through this process:
 
