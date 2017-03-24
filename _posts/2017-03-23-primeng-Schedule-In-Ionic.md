@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ngprime Schedule Component In Ionic 2"
+title:  "primeng Schedule Component In Ionic 2"
 date:   2017-03-23 09:18:00
 author: "Brock Ellis"
 categories: ionic code
