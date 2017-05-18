@@ -14,7 +14,7 @@ tl;dr Setting up a Cordova hook to copy build files to `/docs` for Github Pages
 
 # Problem
 
-I am building an app with Ionic (surprise) and am doing some rapid iterations with the design. In order to get folks to be able to see it early and often, I decided to go with a progress web app (or PWA for you cool kids). The problem was that I had to find someplace to host the code online for the stakeholders to see it. Manually copying or uploading it was not an option.
+I am building an app with Ionic (surprise) and am doing some rapid iterations with the design. In order to get folks to be able to see it early and often, I decided to go with a progressive web app (or PWA for you cool kids). The problem was that I had to find someplace to host the code online for the stakeholders to see it. Manually copying or uploading it was not an option.
 
 # Solution
 
