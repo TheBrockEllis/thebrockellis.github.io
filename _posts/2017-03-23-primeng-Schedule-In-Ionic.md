@@ -52,21 +52,23 @@ $ mkdir config
 
 The original source file is located in `node_modules/@ionic/app-scripts/config/copy.config.js`. We'll copy the contents of that file and put them into our new custom file.
 
-```bash
-$ cp node_modules/@ionic/app-scripts/config/copy.config.js config/copy-custom.js
-```
+{% highlight bash %}
+  $ cp node_modules/@ionic/app-scripts/config/copy.config.js config/copy-custom.js
+{% endhighlight %}
 
 This file contains a bunch of objects that tell Ionic what to grab when you're building the app (or serving or emulating) and where to put the content in the final build. Also known as the `src` and `dest`.
 
 ```js
-  copyPrimeng: {
-    src: ['{{ROOT}}/node_modules/primeng/resources/themes/omega/theme.css', '{{ROOT}}/node_modules/primeng/resources/primeng.min.css', '{{ROOT}}/node_modules/font-awesome/css/font-awesome.min.css'],
-    dest: '{{BUILD}}/assets/css'
-  },
-  copyFontAwesome: {
-    src: ['{{ROOT}}/node_modules/font-awesome/fonts/**/*'],
-    dest: '{{BUILD}}/assets/fonts'
-  }
+  {% raw %}
+    copyPrimeng: {
+      src: ['{{ROOT}}/node_modules/primeng/resources/themes/omega/theme.css', '{{ROOT}}/node_modules/primeng/resources/primeng.min.css', '{{ROOT}}/node_modules/font-awesome/css/font-awesome.min.css'],
+      dest: '{{BUILD}}/assets/css'
+    },
+    copyFontAwesome: {
+      src: ["{{ROOT}}/node_modules/font-awesome/fonts/**/*"],
+      dest: "{{BUILD}}/assets/fonts"
+    }
+  {% endraw %}
 ```
 
 This tells Ionic to go grab the primeng theme css, base css and the Font Awesome css. The second rule also grabs the font awesome fonts and moves them during the copy as well.
