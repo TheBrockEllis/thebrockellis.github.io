@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "GDFC Loses Executive Director"
-date:   2017-05-05 15:35:00
+date:   2017-06-09 15:20:00
 author: "Brock Ellis"
 categories: fremont politics
 comments: true
