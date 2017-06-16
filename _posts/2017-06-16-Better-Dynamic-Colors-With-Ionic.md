@@ -14,7 +14,7 @@ tl;dr Revising the concept of changing app colors at runtime in an Ionic app
 
 # Backstory
 
-A while back, [I wrote a blog](http://thebrockellis.com/2016/11/03/Custom-titlebar-color-in-Ionic2) post about how to customize the colors of Ionic components using a custom directive. The method used in that blog posts works but it's highly fragile since it's completely dependent on the HTML elements of the components and not the CSS classes. With the help of [Simon's blog post at Devdactic](https://devdactic.com/dynamic-theming-ionic/) and [David Walsh's blog post about dynamic CSS](https://davidwalsh.name/add-rules-stylesheets) I was able to achieve the same results with much less fuss.
+A while back, [I wrote a blog](http://thebrockellis.com/2016/11/03/Custom-titlebar-color-in-Ionic2) post about how to customize the colors of Ionic components using a custom directive. The method used in that blog posts works but it's highly fragile since it's completely dependent on the HTML elements of the components and not the CSS classes. With the help of [Simon's blog post about dynamic theming at Devdactic](https://devdactic.com/dynamic-theming-ionic/) and [David Walsh's blog post about dynamic CSS](https://davidwalsh.name/add-rules-stylesheets) I was able to achieve the same results with much less fuss.
 
 # Problem
 
