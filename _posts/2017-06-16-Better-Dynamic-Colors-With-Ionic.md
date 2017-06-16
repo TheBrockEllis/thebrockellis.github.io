@@ -78,7 +78,7 @@ End result should look something like this:
 
 ![dynamic colors](/blog/img/2017-06-16-1.png)
 
-I also did some additional work on making sure the font color would be visible on any color of background. I used the npm package contract (`npm install contract --save`) and used it (`import * as contrast from 'contrast';
+I also did some additional work on making sure the font color would be visible on any color of background. I used the npm package contrast (`npm install contrast --save`) and used it (`import * as contrast from 'contrast';
 `) to test whether the `this.customBgColor` was light or dark and then change the font color to suit. You can see my full [test file here.](https://gist.github.com/TheBrockEllis/ebfa3741c07d6d586f02d4a44af608e8)
 
 This all works in the browser, I have not deployed this code to devices yet so your milage may vary.
