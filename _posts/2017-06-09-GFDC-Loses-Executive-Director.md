@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "GDFC Loses Executive Director"
+title:  "GFDC Loses Executive Director"
 date:   2017-06-09 15:20:00
 author: "Brock Ellis"
 categories: fremont politics
@@ -24,7 +24,7 @@ But with the departure of Cecilia, I call to question whether this project was s
 
 *But it upsets me that she was instrumental in bringing such a controversial project to town that has consequences that could last decades or more and she will not be around to see it through.* She has essentially acted as a mercenary- coming in to do the dirty work, reaping the accolades from landing a project this large, and then leaving without having to deal with the aftermath. However, the problem does not lie with Cecilia; the root of the problem is the GFDC.
 
-The life long citizens of Fremont are the ones who have to now live with the decisions she and the GFDC have made. Many of the GDFC leaders are also members of the ‘upper class’ of Fremont who won’t have to deal with day-to-day realities that will be disrupted now that Costco is coming to town.
+The life long citizens of Fremont are the ones who have to now live with the decisions she and the GFDC have made. Many of the GFDC leaders are also members of the ‘upper class’ of Fremont who won’t have to deal with day-to-day realities that will be disrupted now that Costco is coming to town.
 
 To combat this from happening in the future, and now that the GFDC will be going through a transitionary period to find a new Executive Director, **I’d like to see them "hire from within"**. Don’t bring in another national, rising-star type from Anywhere, America to come and make long-term decisions for Fremont. Look inside of Fremont to find someone who has a vested, lasting interest in the longevity of our community. Fremont is blessed with hundreds of talented and passionate folks who spend every hour of their day working to make Fremont better and her citizens happier.
 
