@@ -18,7 +18,7 @@ A while back, [I wrote a blog](http://thebrockellis.com/2016/11/03/Custom-titleb
 
 # Problem
 
-In our app, the users can choose what color they want to use for the menu. We use that primary color in a bunch of different locations. It helps give the user a level of ownership if they can choose how things look. In the mobile app for the product, built with Ionic, I wanted to recreate that feature but wasn't sure how to change CSS colors at runtime by injecting new rules into our stylesheets based on the results of a network request to our servers.
+In our app, the users can choose what color they want to use for the menu. We use that primary color in a bunch of different locations. It helps give the user a level of ownership if they can choose how things look. In the mobile app for the product, built with Ionic, I wanted to recreate that feature but wasn't sure how to change CSS colors at runtime. I think I've figured out how to do so by injecting new rules into our stylesheets based on the results of the network request to our servers to get the users' custom color.
 
 # Solution
 
