@@ -28,7 +28,7 @@ Open up `app.component.ts` found in `DynamicColorApp/src/app/`.
 
 Once there, let's add a property to the class to hold the custom background color we're going to give the app:
 
-```
+```javascript
 @Component({
   templateUrl: 'app.html'
 })
@@ -39,7 +39,7 @@ export class MyApp {
 
 Now at this point, we should be ready to make an AJAX request back to the server to fetch the users actual background color, but that's outside the scope of this post. For now, let's just assume we have the color string. Let's store that in a property we just created and then call a function to add the necessary CSS rules to our stylesheet
 
-```
+```javascript
 constructor() {
 
   // Some async request that will fetch data that will include the custom color goes here
