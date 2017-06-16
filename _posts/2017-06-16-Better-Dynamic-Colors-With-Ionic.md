@@ -24,7 +24,7 @@ In our app, the users can choose what color they want to use for the menu. We us
 
 Start with a blank Ionic app: `ionic start DynamicColorsApp blank`.
 
-Open up the main app component at `cd DynamicColorApp/src/app/`.
+Open up `app.component.ts` found in `DynamicColorApp/src/app/`.
 
 Once there, let's add a property to the class to hold the custom background color we're going to give the app:
 
