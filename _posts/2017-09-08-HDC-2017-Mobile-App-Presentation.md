@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  "HDC 2017 Hybrid Mobile App Presentation"
