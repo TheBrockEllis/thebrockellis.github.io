@@ -8,7 +8,7 @@ comments: true
 image: "2018-05-09.jpg"
 ---
 
-tl;dr I always carry a pen behind my ears. This is why.
+tl;dr I always carry a pen behind my ear. This is why.
 
 ---
 
