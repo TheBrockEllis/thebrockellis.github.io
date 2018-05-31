@@ -3,46 +3,21 @@ layout: default
 title: My Portfolio
 id: portfolio
 ---
-<!--
-application: icon-code
-video: icon-facetime-video
-website: icon-desktop
-game: icon-gamepad
--->
-
 <h1>My Portfolio</h1>
 
 <div class="container">
 
-<ul class="timeline">
+  <ul class="timeline">
 
-        <li>
-          <div class="timeline-badge"><i class="icon-code"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">TheBrockEllis.com</h4>
-              <p><small class="text-muted"><i class="icon-comments"></i> Personal Website and Blog</small></p>
-            </div>
-            <div class="timeline-body">
-              <p>TheBrockEllis.com was migrated from a dynamic PHP C.R.U.D app to a static page blog powered by Github pages and Jekyll. This website serves as the personal landing/branding page for Brock Ellis and hosts his blog, filled random ramblings.</p>
-            </div>
-          </div>
-        </li>
-        
-        <li class="timeline-inverted">
-          <div class="timeline-badge"><i class="icon-facetime-video"></i></div>
-          <div class="timeline-panel">
-            <div class="timeline-heading">
-              <h4 class="timeline-title">Capital Campaign Video</h4>
-              <p><small class="text-muted"><i class="icon-comments"></i>Fundraising video for local church</small></p>
-            </div>
-            <div class="timeline-body">
-              <p>This video was created for a local church looking to raise funds for building expansion. I began the project by sitting down the fundraising committee leaders and asking what their goals were. I was able to coordinate the taping of personal interviews and special events over a few week span. After submitting the inital draft, there were 2 rounds of revisions before the final product was delivered.</p>
-              <p><a href="https://www.youtube.com/watch?v=XrAJCDEgNt4" title="FLC Capital Campaign Video">Click Here To See Video</a></p>
-            </div>
-          </div>
-        </li>
-        
+    {% for project in site.data.portfolio %}
 
-    </ul>
+      {% capture inverted_styling %}
+        {% cycle '', 'timeline-inverted' %}
+      {% endcapture %}
+
+      {% include project.html project=project inverted_styling=inverted_styling %}
+
+    {% endfor %}
+
+  </ul>
 </div>

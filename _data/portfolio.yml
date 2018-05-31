@@ -1,0 +1,29 @@
+#  type:
+#  title:
+#  subtitle:
+#  comment:
+#  link:
+
+- type: code
+  title: Dan Lebatard Show Wiki
+  subtitle: A PWA for a radio show
+  comment: I love the Dan Lebatard Show from ESPN Radio. I listen to their podcast religiously. Howver, the show has been going on for 15+ years now and there is a tremendous amount of inside jokes. I threw together this site to try and make a central repo for all show knowledge. It's a Stencil PWA with a Wordpress backend. It's also the worst deployment in the history of forever.
+  link: https://dlswiki.com
+
+- type: bookmark
+  title: First Lutheran Church Website
+  subtitle: Designed and launched to replace Filemaker Pro site
+  comment: Our church website was in dire need of an update. They couldn't make changes as often as they wanted to and it was visually displeasing. I set up a Wordpress site for them to iterate on the design, migrated the site to their host and helped update DNS settings. I'm no designer, but the site ended up looking quite nice.
+  link: http://flcfremont.org
+
+- type: facetime-video
+  title: Capital Campaign Video
+  subtitle: Fundraising aid for local church
+  comment: This video was created for a local church looking to raise funds for building expansion. I began the project by sitting down the fundraising committee leaders and asking what their goals were. I was able to coordinate the taping of personal interviews and special events over a few week span. After submitting the inital draft, there were 2 rounds of revisions before the final product was delivered.
+  link: https://www.youtube.com/watch?v=XrAJCDEgNt4
+
+- type: bookmark
+  title: TheBrockEllis.com
+  subtitle: Personal Website and Blog
+  comment: TheBrockEllis.com was migrated from a dynamic PHP C.R.U.D app to a static page blog powered by Github pages and Jekyll. This website serves as the personal landing/branding page for Brock Ellis and hosts his blog, filled random ramblings.
+  link: https://github.com/TheBrockEllis/OldBlog
