@@ -48,7 +48,7 @@ We added a quick script entry in our `package.json` to run the server with `node
 
 We also init'd a git repo, setup a remote git server (github) and added a `.gitignore` file to make sure our `node_modules` directory wasn't checked into git. 
 
-```bash
+```sh
 git init
 git remote add origin [github_repo_url]
 echo "node_modules/" >> .gitignore

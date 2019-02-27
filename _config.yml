@@ -17,6 +17,13 @@ github_username:  TheBrockEllis
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
+
+# Markdown Processors
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
 
 paginate_path: 'blog/:num'
 paginate: 5
