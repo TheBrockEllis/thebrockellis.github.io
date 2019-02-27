@@ -14,7 +14,7 @@ tl;dr Quick and simple node server to proxy requests to the Square API from a Io
 
 # Background
 
-I'm working with one of the students at the (Midland University Code Academy)[http://code.midlandu.edu] to develop a mobile order PWA for a local coffeeshop. The student is using Ionic 4 with Angular to build the UI. We ran into a snag yesterday though: v2 of the Square API is not accessible from client side code. Since the student is working on a timeline for the project, I offered to help me figure out a way to make his client side API calls work.
+I'm working with one of the students at the [Midland University Code Academy](http://code.midlandu.edu) to develop a mobile order PWA for a local coffeeshop. The student is using Ionic 4 with Angular to build the UI. We ran into a snag yesterday though: v2 of the Square API is not accessible from client side code. Since the student is working on a timeline for the project, I offered to help me figure out a way to make his client side API calls work.
 
 # Accessing Square data from client-side code
 
