@@ -14,7 +14,7 @@ tl;dr Things get real with Javascript and party planning
 
 Dear diary,
 
-We finished up the second week. That's a huge milestone. I mean, I guess every week is a huge milestone but it feels like the different between week 1 and week 2 was huge. The first week was 'the plunge' and the students we overwhelmed with HTML/CSS. They got used to it toward the end of the week, and then WHAM! The next Monday they get introduced into the crazy world of Javascript. Two huge domains in two consecutive weeks. That's gotta be hard.
+We finished the second week. That's a huge milestone. I mean, I guess every week is a huge milestone but it feels like the different between week 1 and week 2 was huge. The first week was 'the plunge' and the students we overwhelmed with HTML/CSS. They got used to it toward the end of the week, and then WHAM! The next Monday they get introduced into the crazy world of Javascript. Two huge domains in two consecutive weeks. That's gotta be hard.
 
 Honestly, they're learning things in their second week that took me a good year to understand or recognize when I taught myself. I'm becoming a little jealous that I never had the opportunity to learn coding in a class environment. I fell like I would have loved that style of learning. Alas, there's nothing I can do to change my 'buy a book and struggle through it' code journey, but I guess the struggles that we went through make us who we are today.
 
