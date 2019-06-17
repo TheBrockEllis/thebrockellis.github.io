@@ -5,13 +5,37 @@
 #  link:
 
 - type: code
+  title: CashDepositWatch
+  subtitle: PWA for petty-cash management 
+  comment: I work at a coffeeshop and they use Square. When they made nightly cash deposits into the safe, there was no way of tracking who did it and when, besides scribbing it on a piece of paper. This Github Pages-hosted PWA allows the baristas to create deposits and for the bookkeeper in charge of taking the deposits to the bank to confirm the totals.
+  link: https://thebrockellis.com/CashDepositWatch
+
+- type: code
+  title: Peg Rider
+  subtitle: Point to point transportation system
+  comment: The Milady Coffeehouse, located in downtown Fremont, wanted to help Midland University students who didn't own cars get to the shop for late night events. We developed a ride sharing system that was more akin to a city bus than to Uber. It allowed the coffeeshop to create trips between the two locations, and for students to sign up for a ride. It included integrations for using the phones GPS, geolocation, and Stripe payments.
+  link: http://thebrockellis.com/Pegrider-Mobile
+
+- type: code
+  title: Sycamore School Mobile
+  subtitle: For users of Sycamore School
+  comment: This app makes it easy for parents, students, and staff members of schools that use Sycamore School to access the information they need on-the-go. Staff can take attendance, submut lunch orders, & manage less plans. Parents and studnets can see homework, look at their latest grades, and view school and class news. Includes integration with Sentry for error tracking and device calendar for events.
+  link: https://play.google.com/store/apps/details?id=com.sycamoreschool.app&hl=en_US
+
+- type: code
   title: Dan Lebatard Show Wiki
   subtitle: A PWA for a radio show
   comment: I love the Dan Lebatard Show from ESPN Radio. I listen to their podcast religiously. Howver, the show has been going on for 15+ years now and there is a tremendous amount of inside jokes. I threw together this site to try and make a central repo for all show knowledge. It's a Stencil PWA with a Wordpress backend. It's also the worst deployment in the history of forever.
   link: https://dlswiki.com
 
 - type: bookmark
-  title: First Lutheran Church Website
+  title: LifeHouse website
+  subtitle: New Wordpress site for local non-profit 
+  comment: LifeHouse is a non-profit based in Fremont, NE that was recently formed when two smaller non-profits merged (Care Corps and Low Income Minsitry). A new website was needed due to rebranding and expanded offerings. Hosted on Flywheel, the new Wordpress is very thorough and meets the clients exact needs. Training was done for web admins on-site for long term maintenance.
+  link: https://lifehousene.org
+
+- type: bookmark
+  title: First Lutheran Church website
   subtitle: Designed and launched to replace Filemaker Pro site
   comment: Our church website was in dire need of an update. They couldn't make changes as often as they wanted to and it was visually displeasing. I set up a Wordpress site for them to iterate on the design, migrated the site to their host and helped update DNS settings. I'm no designer, but the site ended up looking quite nice.
   link: http://flcfremont.org
@@ -25,5 +49,5 @@
 - type: bookmark
   title: TheBrockEllis.com
   subtitle: Personal Website and Blog
-  comment: TheBrockEllis.com was migrated from a dynamic PHP C.R.U.D app to a static page blog powered by Github pages and Jekyll. This website serves as the personal landing/branding page for Brock Ellis and hosts his blog, filled random ramblings.
+  comment: TheBrockEllis.com was migrated from a dynamic PHP C.R.U.D. app to a static page blog powered by Github pages and Jekyll. This website serves as the personal landing/branding page for Brock Ellis and hosts his blog, filled random ramblings.
   link: https://github.com/TheBrockEllis/OldBlog
