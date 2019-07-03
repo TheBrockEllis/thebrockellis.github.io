@@ -13,7 +13,7 @@
   <div class='timeline-pictures'>
     {% for picture in include.project.pictures %}
       <a data-fancybox="gallery" href="/assets/img/portfolio/{{ picture }}">
-        <img src='/assets/img/portfolio/{{ picture }}'>
+        <img class='img-thumbnail img-fluid' src='/assets/img/portfolio/{{ picture }}'>
       </a>
     {% endfor %}
   </div>
