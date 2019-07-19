@@ -25,6 +25,25 @@
     - cashdepositwatch2.png
 
 - type: code
+  title: Dan Lebatard Show Wiki
+  subtitle: A PWA for a radio show
+  comment: I love the Dan Lebatard Show from ESPN Radio. I listen to their podcast religiously. However, the show has been going on for 15+ years now and there is a tremendous amount of inside jokes. I threw together this site to try and make a central repo for all show knowledge. It's a Stencil PWA with a Wordpress backend. It's also the worst deployment in the history of forever.
+  link: https://dlswiki.com
+  pictures:
+    - dlswiki1.png
+    - dlswiki2.png
+
+- type: code
+  title: Railcrossing
+  subtitle: Mobile app for being alerted about delays
+  comment: Fremont is a hub of activity of the railroad. We've got major lines crisscrossing town that often times block auto traffic for quite a while. The city of Fremont installed sensors on 4 critical crossings in town and threw the data on a (90s looking) webpage. We assembled a team, scraped the data from the city site, set up our own API, and built a mobile app where people can see crossing statues and also be notified when a train is blocking the track at a certain time.
+  link: https://apps.apple.com/us/app/fremont-trains/id1436618309?ls=1
+  pictures:
+    - trains1.jpg
+    - trains2.jpg
+    - trains3.jpg
+
+- type: code
   title: Pegrider
   subtitle: Point to point transportation system
   comment: The Milady Coffeehouse, located in downtown Fremont, wanted to help Midland University students who didn't own cars get to the shop for late night events. We developed a ride sharing system that was more akin to a city bus than to Uber. It allowed the coffeeshop to create trips between the two locations, and for students to sign up for a ride. It included integrations for using the phones GPS, geolocation, and Stripe payments.
@@ -43,13 +62,6 @@
     - sycamore1.png
     - sycamore2.png
     - sycamore3.png
-
-- type: code
-  title: Dan Lebatard Show Wiki
-  subtitle: A PWA for a radio show
-  comment: I love the Dan Lebatard Show from ESPN Radio. I listen to their podcast religiously. Howver, the show has been going on for 15+ years now and there is a tremendous amount of inside jokes. I threw together this site to try and make a central repo for all show knowledge. It's a Stencil PWA with a Wordpress backend. It's also the worst deployment in the history of forever.
-  link: https://dlswiki.com
-  pictures:
 
 - type: bookmark
   title: LifeHouse website
