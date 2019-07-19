@@ -37,11 +37,11 @@ p {
 }
 
 #footer {
-    color: #b0b0b0;
-    margin:25px 0px;
-    border-top: 1px solid #d0d0d0;
-    padding-top: 15px;
-    text-align: center;
+  color: #b0b0b0;
+  margin:25px 0px;
+  border-top: 1px solid #d0d0d0;
+  padding-top: 15px;
+  text-align: center;
 }
 
 .title a {
@@ -54,14 +54,25 @@ p {
   color: #000;
 }
 
-.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
-    border-bottom: none;
-    background-color: green;
+li.active > a, li.active > a:hover, li.active > a:focus {
+  border-bottom: none;
+  background-color: green;
+  color: #FFF;
+  border-radius: 5px;
 }
 
-.nav-pills>li>a, .nav-pills>li>a:hover, .nav-pills>li>a:focus {
-    border-bottom: none;
-    color: green;
+li > a, li > a:hover, li > a:focus {
+  border-bottom: none;
+  color: green;
+  border-radius: 5px;
+}
+
+.navbar-toggle {
+  border-color: #dddddd;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: #cccccc;
 }
 
 .home-icon-row {
@@ -92,14 +103,14 @@ p {
 }
 
 .home-blog-image {
-    text-align: center;
-    margin: 0 auto;
-    border: 1px solid #B0B0B0;
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid #B0B0B0;
 }
 
 .contact-icons {
-    text-align: center;
-    font-size: 6em;
+  text-align: center;
+  font-size: 6em;
 }
 
 .contact-icons:hover {
@@ -159,6 +170,43 @@ p {
     font-size: 1.3em;
 }
 
-.social-row{
-  margin-top:25px;
+#social-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  margin-bottom: 100px;
+  width: 100%;
+}
+
+#social-separator {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 100px 0;
+  font-size: .8em;
+}
+
+#social-separator span {
+  background: #fff;
+  padding: 0 10px;
+}
+
+form {
+  margin-top: 50px;
+}
+
+.navbar-brand {
+  padding: 0;
+  margin-left: 0;
+}
+
+nav {
+  padding-top: 15px;
+}
+
+nav a {
+  border: none;
 }

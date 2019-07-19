@@ -4,42 +4,81 @@ title: Contact Me
 id: contact
 ---
 
-<!-- begin social icons -->
-<div class="row text-center social-row">
-    <div class="col-md-6">
-        <a href="http://www.facebook.com/thebrockellis" alt="Facebook me" class="contactlink">
-        <span class="icon-stack contact-icons" id="contact-facebook">
-            <i class="icon-circle icon-stack-base"></i>
-            <i class="icon-facebook icon-light"></i>
-        </span>
-        </a>
-    </div>
-    <div class="col-md-6">
-        <a href="http://www.twitter.com/thebrockellis" alt="Tweet at me" class="contactlink">
-        <span class="icon-stack contact-icons" id="contact-twitter">
-            <i class="icon-circle icon-stack-base"></i>
-            <i class="icon-twitter icon-light"></i>
-        </span>
-        </a>
-    </div>
-</div>
+<form class="form-horizontal" action="https://formspree.io/brock@sharproot.com" method="POST" />
 
-<div class="row text-center social-row">
-    <div class="col-md-6">
-        <a href="http://www.github.com/thebrockellis" alt="Fork me!" class="contactlink">
-        <span class="icon-stack contact-icons" id="contact-github">
-            <i class="icon-circle icon-stack-base"></i>
-            <i class="icon-github-alt icon-light"></i>
-        </span>
-        </a>
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="name">Your Name</label>
+    <div class="col-md-5">
+      <input id="name" name="name" type="text" placeholder="Michael Scott" class="form-control input-md"
+            required="">
     </div>
-    <div class="col-md-6">
-        <a href="http://www.linkedin.com/pub/brock-ellis/27/839/514" alt="Connect with me" class="contactlink">
-        <span class="icon-stack contact-icons" id="contact-linkedin">
-            <i class="icon-circle icon-stack-base"></i>
-            <i class="icon-linkedin icon-light"></i>
-        </span>
-        </a>
+  </div>
+
+  <!-- Text input-->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="email">Your Email</label>
+    <div class="col-md-5">
+      <input id="email" name="email" type="text" placeholder="michael.scott@dundermifflin.com"
+            class="form-control input-md" required="">
+
     </div>
+  </div>
+
+  <!-- Textarea -->
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="message">Message</label>
+    <div class="col-md-4">
+        <textarea class="form-control" id="message" name="message"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="message"></label>
+    <div class="col-md-4">
+      <input type='submit' class='btn btn-success btn-lg' value='Submit' />
+    </div>
+  </div>
+
+
+</form>
+
+<h2 id='social-separator'><span>or</span></h2>
+
+<div id='social-container'>
+  <div class='social-link'>
+    <a href="http://www.facebook.com/thebrockellis" alt="Facebook me" class="contactlink">
+      <span class="icon-stack contact-icons" id="contact-facebook">
+        <i class="icon-circle icon-stack-base"></i>
+        <i class="icon-facebook icon-light"></i>
+      </span>
+    </a>
+  </div>
+
+  <div class='social-link'>
+    <a href="http://www.twitter.com/thebrockellis" alt="Tweet at me" class="contactlink">
+      <span class="icon-stack contact-icons" id="contact-twitter">
+        <i class="icon-circle icon-stack-base"></i>
+        <i class="icon-twitter icon-light"></i>
+      </span>
+    </a>
+  </div>
+  
+  <div class='social-link'>
+    <a href="http://www.github.com/thebrockellis" alt="Fork me!" class="contactlink">
+      <span class="icon-stack contact-icons" id="contact-github">
+        <i class="icon-circle icon-stack-base"></i>
+        <i class="icon-github-alt icon-light"></i>
+      </span>
+    </a>
+  </div>
+
+  <div class='social-link'>
+    <a href="http://www.linkedin.com/pub/brock-ellis/27/839/514" alt="Connect with me" class="contactlink">
+      <span class="icon-stack contact-icons" id="contact-linkedin">
+        <i class="icon-circle icon-stack-base"></i>
+        <i class="icon-linkedin icon-light"></i>
+      </span>
+    </a>
+  </div>
 </div>
-<!-- end social icons -->

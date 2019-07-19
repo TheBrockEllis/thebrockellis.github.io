@@ -107,13 +107,15 @@
   border: none;
 }
 
-.timeline-pictures img {
+.timeline-pictures div {
   height: 200px;
   width: 200px;
   margin: 5px;
+  background-size: cover;
+  background-position: center center;
 }
 
-.timeline-pictures img:hover {
+.timeline-pictures div:hover {
   filter: drop-shadow(0 1px 5px black);
 }
 
@@ -188,7 +190,7 @@
     right: auto;
   }
 
-  ul.timeline > li > .timeline-pictures img {
+  /* ul.timeline > li > .timeline-pictures div {
     width: 100%;
-  }
+  } */
 }
