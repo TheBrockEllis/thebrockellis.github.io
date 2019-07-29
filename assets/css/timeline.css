@@ -155,6 +155,10 @@
     margin-top: 5px;
 }
 
+div.timeline-keywords {
+  margin: 10px 0;
+}
+
 @media (max-width: 767px) {
   ul.timeline:before {
     left: 40px;
@@ -189,8 +193,4 @@
     left: -14px;
     right: auto;
   }
-
-  /* ul.timeline > li > .timeline-pictures div {
-    width: 100%;
-  } */
 }

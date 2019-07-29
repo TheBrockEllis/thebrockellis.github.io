@@ -7,14 +7,18 @@
     </div>
     <div class="timeline-body">
       <p> {{ include.project.comment }}</p>
-      <a href="{{ include.project.link }}">Details</a>
+      <div class='timeline-keywords'>
+      {% for keyword in include.project.keywords %} 
+        <span class="label label-default">{{keyword}}</span>
+      {% endfor %}
+      </div>
+      <a href="{{ include.project.link }}">Link</a>
     </div>
   </div>
   <div class='timeline-pictures'>
     {% for picture in include.project.pictures %}
       <a data-fancybox="gallery" href="/assets/img/portfolio/{{ picture }}">
         <div class='img-thumbnail' style="background-image: url('/assets/img/portfolio/{{ picture }}');"></div>
-        <!-- <img class='img-thumbnail img-fluid' src='/assets/img/portfolio/{{ picture }}'> -->
       </a>
     {% endfor %}
   </div>

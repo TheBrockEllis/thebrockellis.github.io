@@ -2,6 +2,7 @@
 #  title:
 #  subtitle:
 #  comment:
+#  keywords: 
 #  link:
 
 - type: code
@@ -9,6 +10,13 @@
   subtitle: Residence Hall management app
   comment: College is often a culture shock for new students living away from home for the first time. Their first semester experience is crucial to their future success as a student. Our app helps colleges make sure the living experience is as smooth as can be by streamlining roommate selection, room placement, applications & contracts, and residence hall communication between students. 
   link: https://www.halltogether.io
+  keywords: 
+    - angular
+    - PWA
+    - ionic
+    - ruby on rails
+    - graphql
+    - digital ocean
   pictures:
     - halltogether1.png
     - halltogether2.png
@@ -20,6 +28,12 @@
   subtitle: PWA for petty-cash management 
   comment: I work at a coffeeshop and they use Square. When they made nightly cash deposits into the safe, there was no way of tracking who did it and when, besides scribbing it on a piece of paper. This Github Pages-hosted PWA allows the baristas to create deposits and for the bookkeeper in charge of taking the deposits to the bank to confirm the totals.
   link: https://thebrockellis.com/CashDepositWatch
+  keywords:
+    - angular
+    - ionic
+    - firebase
+    - ruby on rails
+    - graphql
   pictures:
     - cashdepositwatch1.png
     - cashdepositwatch2.png
@@ -29,6 +43,11 @@
   subtitle: A PWA for a radio show
   comment: I love the Dan Lebatard Show from ESPN Radio. I listen to their podcast religiously. However, the show has been going on for 15+ years now and there is a tremendous amount of inside jokes. I threw together this site to try and make a central repo for all show knowledge. It's a Stencil PWA with a Wordpress backend. It's also the worst deployment in the history of forever.
   link: https://dlswiki.com
+  keywords:
+    - stencil
+    - firebase
+    - wordpress api
+    - digital ocean
   pictures:
     - dlswiki1.png
     - dlswiki2.png
@@ -38,6 +57,15 @@
   subtitle: Mobile app for being alerted about delays
   comment: Fremont is a hub of activity of the railroad. We've got major lines crisscrossing town that often times block auto traffic for quite a while. The city of Fremont installed sensors on 4 critical crossings in town and threw the data on a (90s looking) webpage. We assembled a team, scraped the data from the city site, set up our own API, and built a mobile app where people can see crossing statues and also be notified when a train is blocking the track at a certain time.
   link: https://apps.apple.com/us/app/fremont-trains/id1436618309?ls=1
+  keywords:
+    - ionic
+    - angular
+    - firebase
+    - graphql
+    - onesignal push notifications
+    - web scraping
+    - ruby on rails
+    - digital ocean
   pictures:
     - trains1.jpg
     - trains2.jpg
@@ -48,6 +76,13 @@
   subtitle: Point to point transportation system
   comment: The Milady Coffeehouse, located in downtown Fremont, wanted to help Midland University students who didn't own cars get to the shop for late night events. We developed a ride sharing system that was more akin to a city bus than to Uber. It allowed the coffeeshop to create trips between the two locations, and for students to sign up for a ride. It included integrations for using the phones GPS, geolocation, and Stripe payments.
   link: http://thebrockellis.com/Pegrider-Mobile
+  keywords:
+    - ionic
+    - angular
+    - digital ocean
+    - ruby on rails
+    - rest api
+    - square
   pictures:
     - pegrider1.png
     - pegrider2.png
@@ -58,6 +93,10 @@
   subtitle: For users of Sycamore School
   comment: This app makes it easy for parents, students, and staff members of schools that use Sycamore School to access the information they need on-the-go. Staff can take attendance, submut lunch orders, & manage less plans. Parents and studnets can see homework, look at their latest grades, and view school and class news. Includes integration with Sentry for error tracking and device calendar for events.
   link: https://play.google.com/store/apps/details?id=com.sycamoreschool.app&hl=en_US
+  keywords:
+    - angular
+    - ionic
+    - onesignal push notifications
   pictures: 
     - sycamore1.png
     - sycamore2.png
@@ -68,6 +107,10 @@
   subtitle: New Wordpress site for local non-profit 
   comment: LifeHouse is a non-profit based in Fremont, NE that was recently formed when two smaller non-profits merged (Care Corps and Low Income Minsitry). A new website was needed due to rebranding and expanded offerings. Hosted on Flywheel, the new Wordpress is very thorough and meets the clients exact needs. Training was done for web admins on-site for long term maintenance.
   link: https://lifehousene.org
+  keywords:
+    - wordpress
+    - divi
+    - flywheel
   pictures:
     - lifehouse1.png
     - lifehouse2.png
@@ -78,19 +121,19 @@
   subtitle: Designed and launched to replace Filemaker Pro site
   comment: Our church website was in dire need of an update. They couldn't make changes as often as they wanted to and it was visually displeasing. I set up a Wordpress site for them to iterate on the design, migrated the site to their host and helped update DNS settings. I'm no designer, but the site ended up looking quite nice.
   link: http://flcfremont.org
+  keywords:
+    - wordpress
+    - css
   pictures:
     - firstlutheran1.png
     - firstlutheran2.png
     - firstlutheran3.png
-
-- type: facetime-video
-  title: Capital Campaign Video
-  subtitle: Fundraising aid for local church
-  comment: This video was created for a local church looking to raise funds for building expansion. I began the project by sitting down the fundraising committee leaders and asking what their goals were. I was able to coordinate the taping of personal interviews and special events over a few week span. After submitting the inital draft, there were 2 rounds of revisions before the final product was delivered.
-  link: https://www.youtube.com/watch?v=XrAJCDEgNt4
 
 - type: bookmark
   title: TheBrockEllis.com
   subtitle: Personal Website and Blog
   comment: TheBrockEllis.com was migrated from a dynamic PHP C.R.U.D. app to a static page blog powered by Github pages and Jekyll. This website serves as the personal landing/branding page for Brock Ellis and hosts his blog, filled random ramblings.
   link: https://github.com/TheBrockEllis/OldBlog
+  keywords:
+    - jekyll
+    - github pages
