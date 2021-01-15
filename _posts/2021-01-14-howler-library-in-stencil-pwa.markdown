@@ -8,7 +8,7 @@ comments: true
 image: "2021-01-14.jpg"
 ---
 
-tl;dr Import code Howler library to fix prerendering error
+tl;dr Import core Howler library w/o plugins to fix prerendering error
 
 ---
 
