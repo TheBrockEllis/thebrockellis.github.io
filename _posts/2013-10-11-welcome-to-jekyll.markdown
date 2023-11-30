@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
+date:   2013-10-11 22:01:27
 author: "Brock Ellis"
 categories: jekyll update
 comments: true
